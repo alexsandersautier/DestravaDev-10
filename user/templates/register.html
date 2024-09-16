@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            gap: 10;
+        }
+
+        input {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>    
+</head>
+<body>
+    <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        <div>
+            <input type="text" name="user" id="user" placeholder="user" required>
+        </div>
+        <div>
+            <input type="email" name="email" id="email" placeholder="email" required>
+        </div>
+        <div>
+            <input type="text" name="password" id="password" placeholder="password" required>
+        </div>
+        <div>
+            <button type="submit">Register</button>
+        </div>
+    </form>
+</body>
+</html>
